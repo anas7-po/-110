@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مخطط CSS</title>
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .chart {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #9c27b0 0% 40%,       /* 40% */
+        #ff5722 40% 75%,      /* 35% */
+        #e91e63 75% 100%      /* 25% */
+      );
+      box-shadow: 0 0 20px rgba(156,39,176,0.4);
+      position: relative;
+    }
+    .chart::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      background: #121212;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .legend {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .legend div {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .box {
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="color:#9c27b0;">توزيع خدماتنا</h2>
+  <div class="chart"></div>
+
+  <div class="legend">
+    <div><span class="box" style="background:#9c27b0"></span> تقييم الثغرات (40%)</div>
+    <div><span class="box" style="background:#ff5722"></span> اختبار الاختراق (35%)</div>
+    <div><span class="box" style="background:#e91e63"></span> استشارات الامتثال (25%)</div>
+  </div>
+
+</body>
+</html>
