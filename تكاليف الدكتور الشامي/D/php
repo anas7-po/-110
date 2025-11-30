@@ -1,0 +1,25 @@
+<?php
+$funcs = get_defined_functions();
+?>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>أسماء دوال PHP</title>
+</head>
+<body>
+<h1>دوال PHP الداخلية</h1>
+<ul>
+<?php foreach ($funcs['internal'] as $f): ?>
+    <li><?= $f ?></li>
+<?php endforeach; ?>
+</ul>
+
+<h1>الدوال المعرفة من المستخدم</h1>
+<ul>
+<?php foreach ($funcs['user'] as $f): ?>
+    <li><?= $f ?></li>
+<?php endforeach; ?>
+</ul>
+</body>
+</html>
